@@ -93,3 +93,12 @@ Visualize the relationships between the independent variables/features. Note tha
 
 This visual analysis is further supported by reviewing the correlation matrix.
 ![Heating Oil Correlation Matrix](/images/HeatingOilCorrMatrix.png)
+
+Some points of interest:
+1. Num_Occupants has no correlation between the target variable (Heating_Oil) or any the other independent variables.
+1. Home_Size could have some positive correlation (0.4 -> 0.6) with Heating oil but is not correlated with the other independent variables.
+1. Heating_Oil and Avg_Age have a very strong positive correlation (0.8 -> 1.0)
+1. The remaining variables either have a strong negative or positive correlation (-0.8 <- -0.6 or 0.6 -> 0.8)
+
+Although the independent variables are correlated to Heating_Oil, multicollinearity does exist between the independent variables and if severe can affect the precision of the estimate coefficients and potentially make the p-values untrustworthy. The goal is predictive accuracy but like to make sure that I do not have severely correlated independent variable and do care about how these variables impact each other.
+
