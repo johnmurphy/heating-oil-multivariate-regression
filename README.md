@@ -155,9 +155,10 @@ F-statistic:  1374 on 4 and 1213 DF,  p-value: < 2.2e-16
 ````
 
 Coefficient Interpretation:
-The coefficient for insulation indicates that for every additional rating in insulation you can expect heating oil usage to increase by an average of 3.32 units with a +/- of 0.42 (Std. Error). P-value is less than .05 indicating that the variable is significant.
-...with each degree increase in temperature you can expect heating oil to decrease by an average of -0.88 units. 
-...with each increase in average age people living in the home you can expect heating oil usage to increase by 1.96 units.
-...with each increase in home size rating you can expect heating oil usage to increase by 3.17 units.
+1. The coefficient for insulation indicates that for every additional rating in insulation you can expect heating oil usage to increase by an average of 3.32 units with a +/- of 0.42 (Std. Error). P-value is less than .05 indicating that the variable is significant.
+
+2...with each degree increase in temperature you can expect heating oil to decrease by an average of -0.88 units. 
+3..with each increase in average age people living in the home you can expect heating oil usage to increase by 1.96 units.
+4..with each increase in home size rating you can expect heating oil usage to increase by 3.17 units.
 
 Adjusted R-squared (I prefer using Adjusted R-squared) of 0.82 indicates that roughly 82% of the heating oil usage (behavior) can be explained by the model’s independent variables (Insulation, Temperature, Average Age, and Home Size). 
