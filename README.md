@@ -102,3 +102,50 @@ Some points of interest:
 
 Although the independent variables are correlated to Heating_Oil, multicollinearity does exist between the independent variables and if severe can affect the precision of the estimate coefficients and potentially make the p-values untrustworthy. The goal is predictive accuracy but like to make sure that I do not have severely correlated independent variable and do care about how these variables impact each other.
 
+Assess Multicollinearity with Variance Inflation Factors (VIF)
+````
+vif(training_raw)
+      Variables      VIF
+1    Insulation 3.019653
+2   Temperature 3.455863
+3   Heating_Oil 5.534132
+4 Num_Occupants 1.003545
+5       Avg_Age 3.574649
+6     Home_Size 1.198744
+>
+````
+
+VIF	Status of predictors
+VIF = 1	Not correlated
+1 < VIF < 5	Moderately correlated
+VIF > 5 to 10	Highly correlated
+
+Note:
+Conservatively a VIF > 5 can be problematic; however, there is much debate as to the "best" threshold. Some suggest that VIF between 1 and 5 indicates that there is a moderate correlation, but it is not severe enough to warrant corrective measures. 
+
+````
+> # Build a Regression model with Heating_Oil as the response/target variable.
+> fit <- lm(Heating_Oil ~ ., data=training)
+> 
+> # View summary details
+> summary(fit)
+> # View summary details
+> summary(fit)
+
+Call:
+lm(formula = Heating_Oil ~ ., data = training)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-104.149  -11.963    0.457   11.623  128.310 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 134.51110    7.58865  17.725  < 2e-16 ***
+Insulation    3.32304    0.42032   7.906 5.94e-15 ***
+Temperature  -0.86922    0.07112 -12.222  < 2e-16 ***
+Avg_Age       1.96801    0.06513  30.217  < 2e-16 ***
+Home_Size     3.17325    0.31079  10.210  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+````
