@@ -87,3 +87,6 @@ Some key steps and actions performed during the data understanding stage of the 
 ````
 
 ### Visualize
+Visualize the relationships between the independent variables/features. Note that the Num_Occupants essentially appears to have no linear relationship and Home_Size appears to have a slight relationship while the others have meaningful visual relationships.
+
+![Heating Oil Scatter Plots](/images/HeatingOilScatterPlots.png)
