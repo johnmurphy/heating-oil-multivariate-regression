@@ -100,7 +100,7 @@ Some points of interest:
 1. Heating_Oil and Avg_Age have a very strong positive correlation (0.8 -> 1.0)
 1. The remaining variables either have a strong negative or positive correlation (-0.8 <- -0.6 or 0.6 -> 0.8)
 
-Although the independent variables are correlated to Heating_Oil, multicollinearity does exist between the independent variables and if severe can affect the precision of the estimate coefficients and potentially make the p-values untrustworthy. The goal is predictive accuracy but like to make sure that I do not have severely correlated independent variable and do care about how these variables impact each other.
+Although the independent variables are correlated to Heating_Oil, multicollinearity does exist between the independent variables and if severe can affect the precision of the estimate coefficients and potentially make the p-values untrustworthy. The goal is predictive accuracy but I am interested in the serverity of the correlations and want to analyze how these variables impact each other.
 
 Assess Multicollinearity with Variance Inflation Factors (VIF)
 ````
