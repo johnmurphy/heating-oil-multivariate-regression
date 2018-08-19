@@ -1,1 +1,89 @@
-# heating-oil-regression
+### Background/Objective:
+The Igloo Heating Oil company is a fictitious US based heating oil distributor. Their sales are seasonal where much of their demand takes place from January to February. As a distributor of heating oil, the ability for the leadership teams to plan and make informed decisions relating to overall demand during this time can be the difference in achieving, or not achieving, the organization’s yearly sales objectives.
+
+The leadership teams are interested in understanding the estimated total amount of heating oil demand for the upcoming January to February period. A regression model will be developed to predict the total heating oil purchased using a training data set with the following variables:
+
+1. __Insulation__: Density rating 1 to 10 with 10 being the highest rating
+1. __Temperature__: Average outdoor ambient temperature (Fahrenheit) during January and February
+1. __Num_Occupants__: Total number of people living in the home
+1. __Avg_Age__: Average age of the people living in the home.
+1. __Home_Size__: Rating on a scale of one to eight, of the home’s overall size.
+1. __Heating Oil__: Total number of units of heating oil purchased by the owner of each home.
+
+### Process:
+Some key steps and actions performed during the data understanding stage of the model building process
+````
+> # Display number rows and columns for the loaded dataset. 
+> dim(training_raw)
+[1] 1218    6
+````
+
+````
+> # take a peak at the first 15 rows. What does the data look like?
+> head(training_raw, n = 15)
+   Insulation Temperature Heating_Oil Num_Occupants Avg_Age Home_Size
+1           6          74         132             4    23.8         4
+2          10          43         263             4    56.7         4
+3           3          81         145             2    28.0         6
+4           9          50         196             4    45.1         3
+5           2          80         131             5    20.8         2
+6           5          76         129             3    21.5         3
+7           5          72         131             4    23.5         3
+8           6          88         161             2    38.2         6
+9           5          77         184             3    42.5         3
+10         10          42         225             3    51.1         1
+11          6          90         178             2    42.1         2
+12          3          83         121             1    19.8         2
+13         10          43         186             5    45.1         6
+14          8          59         206             2    50.1         8
+15          4          86         179             5    41.4         6
+>
+````
+
+````
+> # What does the object structure look like?
+> str(training_raw)
+'data.frame':	1218 obs. of  6 variables:
+ $ Insulation   : int  6 10 3 9 2 5 5 6 5 10 ...
+ $ Temperature  : int  74 43 81 50 80 76 72 88 77 42 ...
+ $ Heating_Oil  : int  132 263 145 196 131 129 131 161 184 225 ...
+ $ Num_Occupants: int  4 4 2 4 5 3 4 2 3 3 ...
+ $ Avg_Age      : num  23.8 56.7 28 45.1 20.8 21.5 23.5 38.2 42.5 51.1 ...
+ $ Home_Size    : int  4 4 6 3 2 3 3 6 3 1 ...
+````
+
+````
+> # What kinds of objects are in the data set and what are their data types?
+ > contents(training_raw)
+ Data frame:training_raw	1218 observations and 6 variables    Maximum # NAs:0
+ 
+               Storage
+ Insulation    integer
+ Temperature   integer
+ Heating_Oil   integer
+ Num_Occupants integer
+ Avg_Age        double
+ Home_Size     integer
+````
+
+````
+> # Look at and get familiar with the summary statistics
+ > summary(training_raw)
+    Insulation      Temperature     Heating_Oil    Num_Occupants       Avg_Age        Home_Size    
+  Min.   : 2.000   Min.   :38.00   Min.   :114.0   Min.   : 1.000   Min.   :15.10   Min.   :1.000  
+  1st Qu.: 4.000   1st Qu.:49.00   1st Qu.:148.2   1st Qu.: 2.000   1st Qu.:29.70   1st Qu.:3.000  
+  Median : 6.000   Median :60.00   Median :185.0   Median : 3.000   Median :42.90   Median :5.000  
+  Mean   : 6.214   Mean   :65.08   Mean   :197.4   Mean   : 3.113   Mean   :42.71   Mean   :4.649  
+  3rd Qu.: 9.000   3rd Qu.:81.00   3rd Qu.:253.0   3rd Qu.: 4.000   3rd Qu.:55.60   3rd Qu.:7.000  
+  Max.   :10.000   Max.   :90.00   Max.   :301.0   Max.   :10.000   Max.   :72.20   Max.   :8.000  
+````
+
+````
+> # What is the Standard Deviation? What does the spread look like? 
+> sapply(training_raw, sd)
+   Insulation   Temperature   Heating_Oil Num_Occupants       Avg_Age     Home_Size 
+     2.768094     16.932425     56.248267      1.690605     15.051137      2.321226 
+> 
+````
+
+### Visualize
