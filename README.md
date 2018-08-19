@@ -165,3 +165,7 @@ Adjusted R-squared (I prefer using Adjusted R-squared) of 0.82 indicates that ro
 
 Observed (Predicted) vs. Fitted (Actual)
 ![ObservedFittedPlot](/images/ObservedFittedPlot.png)
+
+Diagnostic Plots
+![DiagnosticPlot](/images/DiagnosticPlots.png)
+
