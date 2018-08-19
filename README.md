@@ -163,5 +163,5 @@ Coefficient Interpretation:
 
 Adjusted R-squared (I prefer using Adjusted R-squared) of 0.82 indicates that roughly 82% of the heating oil usage (behavior) can be explained by the model’s independent variables (Insulation, Temperature, Average Age, and Home Size). 
 
-Precidicted verse Actual
+Observed (Predicted) vs. Fitted (Actual)
 ![ObservedFittedPlot](/images/ObservedFittedPlot.png)
