@@ -162,3 +162,6 @@ Coefficient Interpretation:
 4. With each increase in home size rating you can expect heating oil usage to increase by 3.17 units.
 
 Adjusted R-squared (I prefer using Adjusted R-squared) of 0.82 indicates that roughly 82% of the heating oil usage (behavior) can be explained by the model’s independent variables (Insulation, Temperature, Average Age, and Home Size). 
+
+Precidicted verse Actual
+![ObservedFittedPlot](/images/ObservedFittedPlot.png)
