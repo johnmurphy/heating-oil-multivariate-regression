@@ -10,7 +10,7 @@ The leadership teams are interested in understanding the estimated total amount 
 1. __Home_Size__: Rating on a scale of one to eight, of the home’s overall size.
 1. __Heating Oil__: Total number of units of heating oil purchased by the owner of each home.
 
-### Process:
+### Thought Process:
 Some key steps and actions performed during the data understanding stage of the model building process
 ````
 > # Display number rows and columns for the loaded dataset. 
