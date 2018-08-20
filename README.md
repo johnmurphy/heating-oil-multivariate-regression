@@ -185,7 +185,7 @@ Rediduals vs Leverage plot does not have any values outside of the Cook's distan
 
 
 Deeper look at Cook's distance.
-An observation with Cook's distance larger than three times the mean Cook's distance might be an outlier.
+An observation with a Cook's distance larger than three times the mean of Cook's distance might be an outlier. There are 53 identified outliers.
 
 ![CooksDistance](/images/CooksDistanceInfluentialObs.png)
 
