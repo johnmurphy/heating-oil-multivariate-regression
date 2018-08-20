@@ -161,11 +161,13 @@ F-statistic:  1374 on 4 and 1213 DF,  p-value: < 2.2e-16
 3. With each increase in average age people living in the home you can expect heating oil usage to increase by 1.96 units.
 4. With each increase in home size rating you can expect heating oil usage to increase by 3.17 units.
 
-Adjusted R-squared (I prefer using Adjusted R-squared) of 0.82 indicates that roughly 82% of the heating oil usage (behavior) can be explained by the model’s independent variables (Insulation, Temperature, Average Age, and Home Size). 
+Adjusted R-squared (I prefer using Adjusted R-squared) of 0.82 indicates that roughly 82% of the heating oil usage (behavior) can be explained by the model’s independent variables (Insulation, Temperature, Average Age, and Home Size). Overall a decent goodness of fit, but there is potentially room to improve.
 
-Observed (Predicted) vs. Fitted (Actual)
+#### Observed (Predicted) vs. Fitted (Actual)
 ![ObservedFittedPlot](/images/ObservedFittedPlot.png)
 
-Diagnostic Plots
+
+
+#### Diagnostic Plots
 ![DiagnosticPlot](/images/DiagnosticPlots.png)
 
