@@ -86,7 +86,7 @@ Some key steps and actions performed during the data understanding stage of the 
 > 
 ````
 
-### Visualize
+#### Explanatory Visualization
 Visualize the relationships between the independent variables/features. Note that the Num_Occupants essentially appears to have no linear relationship and Home_Size appears to have a slight relationship while the others have meaningful visual relationships.
 
 ![Heating Oil Scatter Plots](/images/HeatingOilScatterPlots.png)
@@ -94,7 +94,7 @@ Visualize the relationships between the independent variables/features. Note tha
 This visual analysis is further supported by reviewing the correlation matrix.
 ![Heating Oil Correlation Matrix](/images/HeatingOilCorrMatrix.png)
 
-Some points of interest:
+#### Some points of interest:
 1. Num_Occupants has no correlation between the target variable (Heating_Oil) or any the other independent variables.
 1. Home_Size could have some positive correlation (0.4 -> 0.6) with Heating oil but is not correlated with the other independent variables.
 1. Heating_Oil and Avg_Age have a very strong positive correlation (0.8 -> 1.0)
@@ -102,7 +102,7 @@ Some points of interest:
 
 Although the independent variables are correlated to Heating_Oil, multicollinearity does exist between the independent variables and if severe can affect the precision of the estimate coefficients and potentially make the p-values untrustworthy. The goal is predictive accuracy but I am interested in the serverity of the correlations and want to analyze how these variables impact each other.
 
-Assess Multicollinearity with Variance Inflation Factors (VIF)
+#### Assess Multicollinearity with Variance Inflation Factors (VIF)
 ````
 vif(training_raw)
       Variables      VIF
@@ -115,7 +115,7 @@ vif(training_raw)
 >
 ````
 
-VIF	Status of predictors
+#### VIF	Status of predictors
 * VIF = 1	Not correlated
 * 1 < VIF < 5	Moderately correlated
 * VIF > 5 to 10	Highly correlated
@@ -154,7 +154,7 @@ F-statistic:  1374 on 4 and 1213 DF,  p-value: < 2.2e-16
 
 ````
 
-Coefficient Interpretation:
+#### Coefficient Interpretation:
 1. The coefficient for insulation indicates that for every additional rating in insulation you can expect heating oil usage to increase by an average of 3.32 units with a +/- of 0.42 (Std. Error). P-value is less than .05 indicating that the variable is significant.
 
 2. With each degree increase in temperature you can expect heating oil to decrease by an average of -0.88 units. 
