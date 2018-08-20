@@ -164,12 +164,30 @@ F-statistic:  1374 on 4 and 1213 DF,  p-value: < 2.2e-16
 Adjusted R-squared (I prefer using Adjusted R-squared) of 0.82 indicates that roughly 82% of the heating oil usage (behavior) can be explained by the model’s independent variables (Insulation, Temperature, Average Age, and Home Size). 
 
 #### Observed (Predicted) vs. Fitted (Actual)
+There is something interesting happening along the x-axis (fitted) roughly between points 175 and 250. This definitely highlights a potential issue, as I would like to see points closer to the fitted line. Further analysis is required.
+
 ![ObservedFittedPlot](/images/ObservedFittedPlot.png)
 
-There is something interesting happening along the x-axis (fitted) roughly between points 175 and 250. This definatley highlights a potential issue, as I would like to see points closer to the fitted line. 
-
 #### Diagnostic Plots
+How well does the model represent data?
+
+Additional diagnostics. Analyze the residuals. 
+
+The Residuals vs Fitted plot appears to be randomly scattered; However, the points (e.g. 782) in the middle appear to be outliers. Do further analysis to try and identify the cause of the outliers. 
+
+The Normal Q-Q plot looks great until the line sharply breaks at -2 and 2. Further investigate outliers.
+
+The Scale-Location plot is not spread equally. Investigate further (e.g. 782)
+
+Rediduals vs Leverage plot does not have any values outside of the Cook's distance
+
 ![DiagnosticPlot](/images/DiagnosticPlots.png)
+
+
+Deeper look at Cook's distance.
+An observation with Cook's distance larger than three times the mean Cook's distance might be an outlier.
+
+![CooksDistance](/images/CooksDistanceInfluentialObs.png)
 
 
 
