@@ -188,3 +188,22 @@ Deeper look at Cook's distance.
 An observation with a Cook's distance larger than three times the mean of Cook's distance might be an outlier. There are 53 identified outliers.
 
 ![CooksDistance](/images/CooksDistanceInfluentialObs.png)
+
+Take a look at the 10 top and analyze
+
+````
+> inner_join(x = dfTop10, y = influential_obs)
+Joining, by = "observation"
+   Cooks_Value observation Insulation Temperature Heating_Oil Avg_Age Home_Size
+1   0.06472472         240          9          53         290    16.5         8
+2   0.05822468        1011          3          86         118    71.0         4
+3   0.05510753         123         10          53         290    19.5         8
+4   0.05497990         782          7          55         289    16.1         6
+5   0.04836170         145          3          74         118    68.1         2
+6   0.04752840         689          8          42         277    17.8         8
+7   0.04724977         327          8          57         289    19.7         8
+8   0.04713504         208          9          39         277    17.5         8
+9   0.04324848         790         10          39         276    17.9         8
+10  0.04305109        1117         10          60         289    23.2         7
+> 
+````
