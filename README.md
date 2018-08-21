@@ -7,7 +7,7 @@ The Igloo Heating Oil company is a fictitious US based heating oil distributor. 
 
 The leadership teams are interested in understanding the estimated total amount of heating oil demand for the upcoming January to February period. A regression model will be developed to predict the total heating oil purchased using a training data set with the following variables:
 
-1. __Insulation__: Density rating 1 to 10 with 10 being the highest rating
+1. __Insulation__: Home density rating 1 to 10 with 10 being the highest rating
 1. __Temperature__: Average outdoor ambient temperature (Fahrenheit) during January and February
 1. __Num_Occupants__: Total number of people living in the home
 1. __Avg_Age__: Average age of the people living in the home.
