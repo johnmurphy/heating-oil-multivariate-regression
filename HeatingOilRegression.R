@@ -90,9 +90,6 @@ fit <- lm(Heating_Oil ~ ., data=training)
 # View summary details
 summary(fit)
 
-# read csv file into scoring object
-scoring <- read.csv("HeatingOil-S.csv", stringsAsFactors = F)
-
 # plot fitted/predicted vs. observed/actual
 graphics::plot(stats::predict(fit),training$Heating_Oil, col = "blue",
      xlab = "fitted",ylab = "observed")
@@ -130,11 +127,25 @@ dfTop10 <- as.data.frame(sort(cooks.distance(fit), decreasing = T)[1:10])
 colnames(dfTop10)[1] <- "Cooks_Value" # rename column name
 dfTop10$observation <- rownames(dfTop10) # make row name a column
 
+#sort(lm.influence(fit, do.coef = FALSE)$hat, decreasing = T)[1:10]
+
 # Review outliers and observed features
 inner_join(x = dfTop10, y = influential_obs)
 
 # predict heating oil usage on unseen data
+# read csv file into scoring object
+scoring <- read.csv("HeatingOil-S.csv", stringsAsFactors = F)
 Heating_Oil_P <- predict(fit, newdata = scoring)
 
 # predicted heating oil amount
 sum(Heating_Oil_P)
+
+# maybe there was latent variables that were not observed or measured
+# Any home improvements done new argon gas windows, siding with house wrap
+# How much time do the owners spend living at the home? Do they travel often maybe they 
+# Is it a rental property? If so, has it been vacant? How long?
+# Maybe the owners have 'closed off' a few rooms that they do not regualarly use
+# e.g Home Size is 6 but really only heat 4 rooms?
+# is insulation rating in the attic?
+# How old is the house?
+
