@@ -207,3 +207,20 @@ Joining, by = "observation"
 10  0.04305109        1117         10          60         289    23.2         7
 > 
 ````
+#### Some points of interest:
+Observation 240 has a high Heating_Oil and a low Avg_Age.  Maybe there is newborn or young child in the house with parents worried about them being cold? Maybe the house is insulated in the attic, but the windows and siding are old and not properly insulated? Or the data captured is not accurate?
+
+Observation 1011 has a very high Temperature that is greater than 3x the standard deviation. It has a low Heating_Oil value with a high Avg_Age. Is it possible this Temperature is incorrect? Thinking about the domain, heating oil is typically used in regions that have longer winter season with lower temperatures.  Observation 145 appears to potentially have the same issue.
+
+Overall, the remaining observations appear to have general pattern between Heating_Oil and Avg_Age. 
+#### Next Steps:
+Follow up with the business leads to gain a better understanding the analytical findings. Seek feedback and iterate. They might have some additional knowledge that can help improve the model but might not have fully recognized it without being presented with your outcomes.  It takes a team, include them throughout the process.
+
+#### Questions to think about?
+* Maybe there are latent variables that were not observed or measured?
+* Any home improvements? New argon gas windows, siding with house wrap?
+* How much time do the owners spend living at the home? Do they travel often and live in the home one week a month? Is it a rental property? If so, has it been vacant? How long?
+* Maybe the owners have 'closed off' a few rooms that they do not regularly use? If so, does home size need to be redefined?
+* Is the insulation rating for attic insulation?
+* How old is the house?
+* Are there any additional features that could be used to augment the data and improve the model and residuals?
