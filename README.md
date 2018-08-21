@@ -1,5 +1,9 @@
 ### Background/Objective:
-The Igloo Heating Oil company is a fictitious US based heating oil distributor. Their sales are seasonal where much of their demand takes place from January to February. As a distributor of heating oil, the ability for the leadership teams to plan and make informed decisions relating to the overall demand, during this time, can be the difference in achieving, or not achieving, the organization’s yearly sales objectives.
+The Igloo Heating Oil company is a fictitious US based heating oil distributor. Their sales are seasonal where much of their demand takes place from January to February. The ability for the leadership teams to plan and make informed decisions relating to the overall demand, during this time, can be the difference in achieving, or not achieving, the organization’s yearly sales objectives. Understanding demand could also improve the decision making process relating to the following types of questions:
+
+1.	How much oil should be pre-ordered, from the manufacturer, to ensure that supply meets demand, that customer satisfaction is exceeded, and costs/expenses are properly set and managed?
+1.	Will there be enough on-site storage capable of meeting future demand? Is there too much? Storage Tanks, Temporary Hold Tanks, Trucks, etc.
+1.	Is there enough staff to meet peek demand? Are there enough truck drivers, call center representatives, or technicians? Is there a need to on-board temporary staff?
 
 The leadership teams are interested in understanding the estimated total amount of heating oil demand for the upcoming January to February period. A regression model will be developed to predict the total heating oil purchased using a training data set with the following variables:
 
