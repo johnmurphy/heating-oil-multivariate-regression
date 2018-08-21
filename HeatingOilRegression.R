@@ -28,8 +28,9 @@ training_raw <- read.csv("HeatingOil-T.csv", stringsAsFactors = F)
 # Display number rows and columns for the loaded dataset.
 d1 <- dim(training_raw)
 
-# take a peak at the first 15 rows..
+# take a peak at the first and last 15 rows..
 head(training_raw, n = 15)
+tail(training_raw, n = 10) # Last 15 rows
 
 # what does the object structure look like?
 str(training_raw)
@@ -101,7 +102,7 @@ plot(fit, col = "blue")
 
 par(mfrow = c(1,1)) # reset par back to normal 1 pot
 
-#dev.off() # run this is the plots get hosed up in RStudio...
+#dev.off() # run this if the plots get hosed up in RStudio...
 
 # Deeper dive on influential observations using cooks distance
 cooksd <- cooks.distance(fit)
@@ -132,6 +133,12 @@ dfTop10$observation <- rownames(dfTop10) # make row name a column
 # Review outliers and observed features
 inner_join(x = dfTop10, y = influential_obs)
 
+'******************************************************************************************
+
+                            Apply Model to Unseen Data
+
+******************************************************************************************'
+
 # predict heating oil usage on unseen data
 # read csv file into scoring object
 scoring <- read.csv("HeatingOil-S.csv", stringsAsFactors = F)
@@ -139,13 +146,3 @@ Heating_Oil_P <- predict(fit, newdata = scoring)
 
 # predicted heating oil amount
 sum(Heating_Oil_P)
-
-# maybe there was latent variables that were not observed or measured
-# Any home improvements done new argon gas windows, siding with house wrap
-# How much time do the owners spend living at the home? Do they travel often maybe they 
-# Is it a rental property? If so, has it been vacant? How long?
-# Maybe the owners have 'closed off' a few rooms that they do not regualarly use
-# e.g Home Size is 6 but really only heat 4 rooms?
-# is insulation rating in the attic?
-# How old is the house?
-
