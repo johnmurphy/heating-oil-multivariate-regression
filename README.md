@@ -125,7 +125,7 @@ vif(training_raw)
 * VIF > 5 to 10	Highly correlated
 
 Note:
-Conservatively a VIF > 5 can be problematic; however, there is much debate as to the "best" threshold. Some suggest that VIF between 1 and 5 indicates that there is a moderate correlation, but it is not severe enough to warrant corrective measures. I do not rely 100% on this measure, but use it as a piece of diagnotics information to help me better understand the data and its relationships.
+Conservatively a VIF > 5 can be problematic; however, there is much debate as to the "best" threshold. Some suggest that VIF between 1 and 5 indicates that there is a moderate correlation, but it is not severe enough to warrant corrective measures. I do not rely 100% on this measure, but use it as an additional piece information to help me better understand the data and its relationships.
 
 ````
 > # Build a Regression model with Heating_Oil as the response/target variable.
