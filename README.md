@@ -183,17 +183,17 @@ The Normal Q-Q plot looks great until the line sharply breaks at -2 and 2. Furth
 
 The Scale-Location plot is not spread equally. Investigate further (e.g. 782)
 
-Rediduals vs Leverage plot does not have any values outside of the Cook's distance
+Rediduals vs Leverage plot does not have any values outside of the Cook's distance. Intuitively this does not seem right. Will take a deeper dive into Cook's distance and the potential outliers.
 
 ![DiagnosticPlot](/images/DiagnosticPlots.png)
 
 
 Deeper look at Cook's distance.
-An observation with a Cook's distance larger than three times the mean of Cook's distance might be an outlier. There are 53 identified outliers.
+An observation with a Cook's distance larger than three times the mean of Cook's distance might be an outlier. There are 53 identified outliers in the heating oil data set.
 
 ![CooksDistance](/images/CooksDistanceInfluentialObs.png)
 
-Take a look at the 10 top and analyze
+Take a look at the 10 top and analyze the potential cause or behavior influencing the outlier.
 
 ````
 > inner_join(x = dfTop10, y = influential_obs)
@@ -217,6 +217,7 @@ Observation 240 has a high Heating_Oil and a low Avg_Age.  Maybe there is newbor
 Observation 1011 has a very high Temperature that is greater than 3x the standard deviation. It has a low Heating_Oil value with a high Avg_Age. Is it possible this Temperature is incorrect? Thinking about the domain, heating oil is typically used in regions that have longer winter season with lower temperatures.  Observation 145 appears to potentially have the same issue.
 
 Overall, the remaining observations appear to have general pattern between Heating_Oil and Avg_Age. 
+
 #### Next Steps:
 Follow up with the business leads to gain a better understanding the analytical findings. Seek feedback and iterate. They might have some additional knowledge that can help improve the model but might not have fully recognized it without being presented with your outcomes.  It takes a team, include them throughout the process.
 
