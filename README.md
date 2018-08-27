@@ -57,7 +57,7 @@ Some key steps and actions performed during the data understanding stage of the 
 ````
 
 ````
-> # What kinds of objects are in the data set and what are their data types?
+> # What kinds of objects are in the data set and what are their data types? Are there missing values?
  > contents(training_raw)
  Data frame:training_raw	1218 observations and 6 variables    Maximum # NAs:0
  
